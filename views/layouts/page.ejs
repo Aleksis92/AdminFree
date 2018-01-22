@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/ionicons.css" rel="stylesheet" type="text/css"/>
+    <link href="/fonts" rel="stylesheet" type="text/css"/>
     <link href="/css/css-social-buttons/social-buttons.css" rel="stylesheet" type="text/css"/>
     <link href="/css/responsive.css" rel="stylesheet" type="text/css"/>
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
 </head>
 
-<div class="container-fluid background">
+<div class="container-fluid">
     <div class="row header">
         <div class="container flex align-content-center">
             <div class="row header-content no-gutter" >
@@ -30,7 +32,7 @@
                     <% } %>
                 </div>
                 <div class="header-col col-12 col-sm-4 flex align-items-center horizontal-position-end">
-                    <% if (!user) { %>
+                    <% if (!user || user.blockStatus) { %>
                     <p>Please, sign in!</p><br>
                     <% } else {%>
                     <div><p class="logIn"><%= user.username %></p></div>

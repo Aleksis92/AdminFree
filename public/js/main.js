@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('.grid-row').click(function () {
+    $('.table-row').click(function () {
         var constThis = $(this);
         $(this).toggleClass('select');
         var no = false;
@@ -13,18 +13,21 @@ $(document).ready(function () {
                 yes = true;
             }
         });
-        buttonCheck(yes, no);
+        ButtonCheck(yes, no);
     });
 
     $('#delete').click(function () {
         AllSelected("/delete", SendAjax);
+        ButtonClick();
     });
 
     $('#block').click(function () {
         AllSelected("/block", SendAjax);
+        ButtonClick();
     });
     $('#unblock').click(function () {
         AllSelected("/unblock", SendAjax);
+        ButtonClick();
     });
 });
 
@@ -88,8 +91,16 @@ function CleanHtml(selectedElements) {
     });
 }
 
+function ButtonClick() {
+    $('#delete').css({'opacity': '0.7', 'pointer-events' : 'none',
+        'cursor' : 'default', 'color' : 'darkgrey'});
+    $('#block').css({'opacity': '0.7', 'pointer-events' : 'none',
+        'cursor' : 'default', 'color' : 'darkgrey'});
+    $('#unblock').css({'opacity': '0.7', 'pointer-events' : 'none',
+        'cursor' : 'default', 'color' : 'darkgrey'});
+}
 
-function buttonCheck(yes, no) {
+function ButtonCheck(yes, no) {
     if (!yes && !no) {
         $('#block').css({'opacity': '0.7', 'pointer-events' : 'none',
             'cursor' : 'default', 'color' : 'darkgrey'});
@@ -100,26 +111,26 @@ function buttonCheck(yes, no) {
     }
     if (yes && no) {
         $('#block').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
         $('#unblock').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
         $('#delete').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
     }
     if (yes && !no) {
         $('#block').css({'opacity': '0.7', 'pointer-events' : 'none',
             'cursor' : 'default', 'color' : 'darkgrey'});
         $('#unblock').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
         $('#delete').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
     }
     if (!yes && no) {
         $('#block').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
         $('#unblock').css({'opacity': '0.7', 'pointer-events' : 'none',
             'cursor' : 'default', 'color' : 'darkgrey'});
         $('#delete').css({'opacity': '1', 'pointer-events' : 'auto',
-            'cursor' : 'pointer', 'color' : '#fff'});
+            'cursor' : 'pointer', 'color' : '#007bff'});
     }
 }

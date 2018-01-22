@@ -3,9 +3,8 @@
 
 <div class="row main">
     <% if (user) { %>
-    <div class="container">
+    <div class="container-fluid">
         <div class="col-12 height flex justify-content-center align-items-center no-gutter">
-            <div class="work-area">
                 <% if (user.blockStatus) { %>
                 <div class="row block">
                     <div class="col-12 flex justify-content-center align-items-center">
@@ -20,41 +19,39 @@
                     </div>
                 </div>
                 <% } else { %>
-                <ul class="nav nav-pills nav-fill">
-                    <li class="nav-item">
-                        <a id="delete" class="nav-link active toolbar" href="#">Delete</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="block" class="nav-link active toolbar" href="#">Block</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="unblock" class="nav-link active toolbar" href="#">Unblock</a>
-                    </li>
-                </ul>
-                <div class="grid-container">
-                    <div class="grid-wrapper">
-                        <div class="grid-row-header">
-                            <div class="grid-column-header">Id</div>
-                            <div class="grid-column-header">Username</div>
-                            <div class="grid-column-header">Photo</div>
-                            <div class="grid-column-header">Provider</div>
-                            <div class="grid-column-header">Last authorize</div>
-                            <div class="grid-column-header">Block status</div>
-                        </div>
-                        <% allUsers.forEach(function (item, i , arr) { %>
-                        <div class="grid-row">
-                            <div class="grid-column"><%= arr[i].id %></div>
-                            <div class="grid-column"><%= arr[i].displayName %></div>
-                            <div class="grid-column"><img class="scale" src="<%= arr[i].photoUrl %>"/></div>
-                            <div class="grid-column"><%= arr[i].provider %></div>
-                            <div class="grid-column"><%= arr[i].created %></div>
-                            <div class="grid-column"><%= arr[i].block %></div>
-                        </div>
-                        <% })%>
-                    </div>
-                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="toolbar"><a id="delete" class="ion-trash-a ico" href="#"></a>
+                                                        <a id="block" class="ion-close-round ico" href="#"></a>
+                                                        <a id="unblock" class="ion-checkmark-round ico" href="#"></a> </th>
+
+                    </tr>
+                    </thead>
+                    <thead class="thead">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Photo</th>
+                        <th scope="col">Provider</th>
+                        <th scope="col">Last authorize</th>
+                        <th scope="col">Block status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% allUsers.forEach(function (item, i , arr) { %>
+                    <tr class="table-row">
+                        <th scope="row"><%= arr[i].id %></th>
+                        <td><%= arr[i].displayName %></td>
+                        <td><img class="scale" src="<%= arr[i].photoUrl %>"/></td>
+                        <td><%= arr[i].provider %></td>
+                        <td><%= arr[i].created %></td>
+                        <td><%= arr[i].block %></td>
+                    </tr>
+                    <% })%>
+                    </tbody>
+                </table>
                 <% }%>
-            </div>
         </div>
     </div>
     <% } %>

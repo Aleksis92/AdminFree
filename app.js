@@ -1,4 +1,5 @@
 var express = require('express');
+var favicon = require('serve-favicon');
 var http = require('http');
 var path = require('path');
 var config = require('config');
@@ -6,7 +7,7 @@ var log = require('libs/log')(module);
 var User = require('models/user').User;
 
 var app = express();
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.png')))
 app.set('port', config.get('port'));
 
 app.engine('ejs', require('ejs-locals'));
