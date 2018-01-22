@@ -1,0 +1,15 @@
+@media  (max-width: 575px) {
+    .flex {
+        justify-content: center;
+        align-items: center;
+    }
+    .block-text {
+        font-size: 14pt!important;
+    }
+    .header p {
+        font-size: 20pt;
+    }
+    .logIn {
+        font-size: 14pt!important;
+    }
+}

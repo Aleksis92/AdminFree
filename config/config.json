@@ -1,0 +1,41 @@
+{
+  "port": 3000,
+  "mongoose": {
+    "uri": "mongodb://localhost/admin",
+    "options": {
+      "server": {
+        "useMongoClient" : "true",
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "session": {
+  "secret": "KillerIsJim",
+  "key" : "sid",
+  "cookie": {
+     "path": "/",
+     "httpOnly": true,
+     "maxAge": null
+   },
+  "resave": "true",
+  "saveUninitialized": "true"
+  },
+  "facebook": {
+      "clientID": "1384892198307208",
+      "clientSecret": "7687bce2f1465654110291c3b6eec614",
+      "callbackURL": "http://localhost:3000/auth/fb/callback"
+  },
+  "vk": {
+
+       "clientID": "6338193",
+       "clientSecret": "b2sPEq5wRTxVDg7qCGhk",
+       "callbackURL": "http://localhost:3000/auth/vk/callback"
+  },
+    "twitter": {
+        "consumerKey": "uNvyEy0lQqpDEVRapT2NFbzeC",
+         "consumerSecret": "6k11Tzyo5OEapelYIfu3eXZEb44mEgESarvSOpD0MUdFOgU3pS",
+         "callbackURL": "http://localhost:3000/auth/twitter/callback"
+    }
+}

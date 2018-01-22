@@ -1,0 +1,144 @@
+body {
+    font-family: 'Open Sans', sans-serif!important;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-image: url(../images/background2.jpg);
+    background-position: center;
+}
+
+.no-gutter {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.horizontal-position-end {
+    justify-content: end;
+    padding-right: 0!important;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    background-color: aliceblue;
+    min-height: 10vh;
+    opacity: 0.9;
+}
+    .header-content {
+        width: 100%;
+    }
+    .header p {
+        font-size: 24pt;
+        margin-bottom: 0;
+        line-height: 1!important;
+    }
+    .header-col {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+    }
+
+.main {
+    min-height: 90vh;
+}
+
+.work-area {
+    height: 75vh;
+    width: 100%;
+    background-color: aliceblue;
+    opacity: 0.9;
+    padding: 15px;
+    border-radius: 10px;
+    min-height: 440px;
+    max-height: 800px;
+    margin-top: 10px;
+}
+
+.height {
+    height: 100%;
+}
+
+.logIn {
+    font-size: 14pt!important;
+    padding-right: 15px;
+}
+.block {
+    height: 50%;
+}
+    .block-text {
+        font-size: 24pt!important;
+        text-align: center;
+    }
+
+.grid-container {
+    overflow: auto;
+    height: 88%;
+    margin-top: 10px;
+    border: solid 1px #4d7de1;
+    border-radius: 15px;
+    background-color: cornflowerblue;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-rows: 100%;
+
+}
+
+.grid-column {
+    line-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 80px;
+    width: 100%;
+}
+    .grid-row:hover {
+        cursor: pointer;
+    }
+    .grid-column-header {
+        line-height: 40px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 40px;
+        width: 100%;
+    }
+
+.grid-row {
+    text-align: center;
+    display: grid;
+    height: 80px;
+    background-color: cornflowerblue;
+    grid-template-columns:
+            minmax(180px, 1fr) minmax(180px, 1fr)
+            minmax(100px, 1fr) minmax(140px, 1fr)
+            minmax(140px, 1fr) minmax(80px, 1fr);
+    border-bottom: solid 1px #4d7de1;
+}
+    .grid-row-header {
+        text-align: center;
+        display: grid;
+        height: 40px;
+        background-color: cornflowerblue;
+        grid-template-columns:
+                minmax(180px, 1fr) minmax(180px, 1fr)
+                minmax(100px, 1fr) minmax(140px, 1fr)
+                minmax(140px, 1fr) minmax(80px, 1fr);;
+        border-bottom: solid 1px #4d7de1;
+    }
+
+.toolbar {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.7;
+
+}
+
+.select {
+    background-color: #7f77fc;
+}
+
+.scale {
+    transform: scale(1.2,1.2);
+}
+
